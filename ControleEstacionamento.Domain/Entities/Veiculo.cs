@@ -19,9 +19,9 @@ namespace ControleEstacionamento.Domain.Entities
         public virtual Valores Valores { get; set; }
         public int ValorId { get; set; }
 
-    public Veiculo()
+        public Veiculo()
         {
-            this.HoraEntrada = DateTime.Now;
+             this.HoraEntrada = DateTime.Now;
         }
 }
 }

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ControleEstacionamento.Domain.Base
+namespace ControleEstacionamento.Domain.Entities
 {
     public class Veiculo
     {
@@ -16,9 +16,10 @@ namespace ControleEstacionamento.Domain.Base
         public DateTime HoraEntrada { get; set; }
         public DateTime? HoraSaida { get; set; }
 
-        public virtual List<Preco> { get; set; }
+        public virtual Valores Valores { get; set; }
+        public int ValorId { get; set; }
 
-        public Veiculo()
+    public Veiculo()
         {
             this.HoraEntrada = DateTime.Now;
         }

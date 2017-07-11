@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControleEstacionamento.Domain.Entities
 {
-    public class Preco
+    public class Valores
     {
         public int ValorId { get; set; }
         public double ValorHoraInicial { get; set; }
@@ -14,5 +14,6 @@ namespace ControleEstacionamento.Domain.Entities
         public double ValorHoraAdicional { get; set; }
         public double ValorTotal { get; set; }
 
+        public List<Veiculo> ListaVeiculo = new List<Veiculo>();
     }
 }

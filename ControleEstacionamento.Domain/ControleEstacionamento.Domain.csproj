@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Preco.cs" />
+    <Compile Include="Entities\Valores.cs" />
     <Compile Include="Entities\Veiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

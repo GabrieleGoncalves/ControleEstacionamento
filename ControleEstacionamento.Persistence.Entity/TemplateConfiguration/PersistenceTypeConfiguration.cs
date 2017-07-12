@@ -10,10 +10,12 @@ namespace ControleEstacionamento.Persistence.Entity.TemplateConfiguration
             ConfiguraCampos();
             ConfiguraChavePrimaria();
             ConfiguraRelacionamentos();
+
         }
         public abstract void ConfiguraNomeTabela();
         public abstract void ConfiguraCampos();
         public abstract void ConfiguraChavePrimaria();
         public abstract void ConfiguraRelacionamentos();
+        
     }
 }

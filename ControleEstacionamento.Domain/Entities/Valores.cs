@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 
 namespace ControleEstacionamento.Domain.Entities
 {
@@ -14,7 +10,7 @@ namespace ControleEstacionamento.Domain.Entities
         public double ValorHoraAdicional { get; set; }
         public double ValorTotal { get; set; }
 
-        public virtual IEnumerable<Veiculo> ListaVeiculo { get; set; }
+        public virtual ICollection<Veiculo> ListaVeiculo { get; set; }
 
         public Valores()
         {

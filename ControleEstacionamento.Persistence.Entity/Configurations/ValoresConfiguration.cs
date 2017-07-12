@@ -1,5 +1,4 @@
-﻿using System;
-using ControleEstacionamento.Domain.Entities;
+﻿using ControleEstacionamento.Domain.Entities;
 using ControleEstacionamento.Persistence.Entity.TemplateConfiguration;
 
 namespace ControleEstacionamento.Persistence.Entity.Configurations
@@ -29,5 +28,17 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
         {
             HasKey(val => val.ValorId);
         }
+
+        public override void ConfiguraNomeTabela()
+        {
+            ToTable("tbl_valores");
+        }
+
+        public override void ConfiguraRelacionamentos()
+        {
+            HasMany(p => p.ListaVeiculo);
+
+        }
+
     }
 }

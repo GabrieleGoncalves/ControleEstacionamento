@@ -21,7 +21,7 @@ namespace ControleEstacionamento.Domain.Entities
         public Veiculo()
         {
             ListaValores = new List<Valores>();
-            this.HoraEntrada = DateTime.Now; //pode isso aqui?
+            this.HoraEntrada = DateTime.Now;
         }
 
              

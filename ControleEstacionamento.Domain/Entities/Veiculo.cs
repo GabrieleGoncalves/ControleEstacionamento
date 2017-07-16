@@ -16,12 +16,15 @@ namespace ControleEstacionamento.Domain.Entities
         public DateTime HoraEntrada { get; set; }
         public DateTime? HoraSaida { get; set; }
 
-        public virtual Valores Valores { get; set; }
-        public int ValorId { get; set; }
+        public virtual ICollection<Valores> ListaValores { get; set; }
 
         public Veiculo()
         {
-             this.HoraEntrada = DateTime.Now;
+            ListaValores = new List<Valores>();
+            this.HoraEntrada = DateTime.Now; //pode isso aqui?
         }
-}
+
+             
+
+    }
 }

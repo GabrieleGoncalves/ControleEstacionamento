@@ -10,11 +10,10 @@ namespace ControleEstacionamento.Domain.Entities
         public double ValorHoraAdicional { get; set; }
         public double ValorTotal { get; set; }
 
-        public virtual ICollection<Veiculo> ListaVeiculo { get; set; }
+        public virtual Veiculo Veiculo{ get; set; }
+        public int VeiculoId { get; set; }
+        
 
-        public Valores()
-        {
-            ListaVeiculo = new List<Veiculo>();
-        }
+        
     }
 }

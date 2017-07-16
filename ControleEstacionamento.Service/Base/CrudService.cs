@@ -1,45 +1,85 @@
-﻿using ControleEstacionamento.Repository.Base;
+﻿using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
 
-namespace ControleEstacionamento.Service.Base
+namespace ControleEstacionamento.Repository.Base
 {
-    public abstract class CrudService<TEntity, TKey> : ICrudService<TEntity, TKey> where TEntity : class
+    public abstract class CrudRepository<TEntity, TKey> : ICrudRepository<TEntity, TKey>
+        where TEntity : class
     {
-        private readonly ICrudRepository<TEntity, TKey> _repository;
+        protected DbContext _context;
 
-        public CrudService(ICrudRepository<TEntity, TKey> repository)
+        public CrudRepository(DbContext context)
         {
-            _repository = repository;
+            _context = context;
         }
 
-        public bool Delete(TEntity entity)
+        public virtual List<TEntity> Select(Func<TEntity, bool> where = null)
         {
-            return _repository.Delete(entity);
+            IEnumerable<TEntity> resultado = _context.Set<TEntity>();
+            if (where != null)
+                resultado = resultado.Where(where);
+            return resultado.ToList();
+        }
+
+        public virtual TEntity SelectById(TKey id)
+        {
+            return _context.Set<TEntity>().Find(id);
+        }
+
+        public virtual bool Insert(TEntity entity)
+        {
+            try
+            {
+                _context.Set<TEntity>().Add(entity);
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
 
         }
 
-        public bool DeleteById(TKey id)
+        public virtual bool Update(TEntity entity)
         {
-            return _repository.DeleteById(id);
+            try
+            {
+                _context.Set<TEntity>().Attach(entity);
+                _context.Entry(entity).State = EntityState.Modified;
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
 
-        public bool Insert(TEntity entity)
+        public virtual bool Delete(TEntity entity)
         {
-            return _repository.Insert(entity);
+            try
+            {
+                _context.Set<TEntity>().Attach(entity);
+                _context.Entry(entity).State = EntityState.Deleted;
+                _context.SaveChanges();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
 
-        public List<TEntity> Select(Func<TEntity, bool> where = null)
+        public virtual bool DeleteById(TKey id)
         {
-            return _repository.Select(where);
+            TEntity entity = SelectById(id);
+            return Delete(entity);
         }
 
-        public TEntity SelectById(TKey id)
-        {
-            return _repository.SelectById(id);
-        }
-
-        public bool Update(TEntity entity)
-        {
-            return _repository.Update(entity);
-        }
     }
 }

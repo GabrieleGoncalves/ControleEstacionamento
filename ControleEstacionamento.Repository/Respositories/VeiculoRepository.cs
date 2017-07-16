@@ -11,18 +11,5 @@ namespace ControleEstacionamento.Repository.Respositories
             : base(context)
         { }
 
-        //public override List<Veiculo> Select(Func<Veiculo, bool> where = null)
-        //{
-        //    IEnumerable<TEntity> resultado = _context.Set<TEntity>();
-        //    if (where != null)
-        //        resultado = resultado.Where(where);
-        //    return resultado.ToList();
-        //}
-
-        public override bool Insert(Veiculo entity)
-        {
-            return base.Insert(entity);
-        }
-    
     }
 }

@@ -1,26 +1,30 @@
 ﻿using System;
-using ControleEstacionamento.Domain.Entities;
-using System.ComponentModel.DataAnnotations;
+using System.ComponentModel;
 
-namespace ControleEstacionamento.Web.ViewModels
+namespace ControleEstacionamento.ViewModels.Veiculo
 {
-    public class VeiculoViewModel
+    public class VeiculoViewModelList
     {
-        [Key]
         public int VeiculoId { get; set; }
 
-        [Required(ErrorMessage = "Preencha o campo Placa")]
-        [MaxLength(7, ErrorMessage ="Máximo {0} caracteres")]
         public string Placa { get; set; }
 
         public string Marca { get; set; }
+
         public string Modelo { get; set; }
+
         public string NomeCliente { get; set; }
+
         public DateTime HoraEntrada { get; set; }
+
         public DateTime? HoraSaida { get; set; }
 
+        [DisplayName("Valor")]
         public int ValorId { get; set; }
-        public virtual ValoresViewModel Valores { get; set; }
-        
+
+        public VeiculoViewModelList()
+        {
+            this.HoraEntrada = DateTime.Now;
+        }
     }
 }

@@ -7,26 +7,26 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
     {
         public override void ConfiguraCampos()
         {
-            Property(va => va.ValorId)
+            Property(p => p.ValorId)
                 .IsRequired()
                 .HasColumnName("val_codigo");
 
-            Property(va => va.ValorHoraInicial)
+            Property(p => p.ValorHoraInicial)
                 .HasColumnName("val_hora_inicial");
 
-            Property(va => va.TempoPermanencia)
+            Property(p => p.TempoPermanencia)
                 .HasColumnName("val_tempo_permanencia");
 
-            Property(va => va.ValorHoraAdicional)
+            Property(p => p.ValorHoraAdicional)
                 .HasColumnName("val_hora_adicional");
 
-            Property(va => va.ValorTotal)
+            Property(p => p.ValorTotal)
                 .HasColumnName("val_valor_total");
         }
 
         public override void ConfiguraChavePrimaria()
         {
-            HasKey(val => val.ValorId);
+            HasKey(p => p.ValorId);
         }
 
         public override void ConfiguraNomeTabela()
@@ -36,8 +36,9 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
 
         public override void ConfiguraRelacionamentos()
         {
-            HasMany(p => p.ListaVeiculo);
-
+            HasRequired(p => p.Veiculo)
+                .WithMany(p => p.ListaValores)
+                .HasForeignKey(p => p.VeiculoId);
         }
 
     }

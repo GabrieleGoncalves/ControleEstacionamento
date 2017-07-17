@@ -7,13 +7,13 @@ namespace ControleEstacionamento.Persistence.Entity.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class MigrationInicial : IMigrationMetadata
+    public sealed partial class Inicial : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(MigrationInicial));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Inicial));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707120530489_MigrationInicial"; }
+            get { return "201707162113189_Inicial"; }
         }
         
         string IMigrationMetadata.Source

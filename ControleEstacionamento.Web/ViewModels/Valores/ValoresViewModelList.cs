@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel;
+using System;
 
 namespace ControleEstacionamento.Web.ViewModels.Valores
 {
@@ -6,16 +7,20 @@ namespace ControleEstacionamento.Web.ViewModels.Valores
     {
         public int ValorId { get; set; }
 
-        [DisplayName("Valor da hora inicial")]
-        public double ValorHoraInicial { get; set; }
+        [DisplayName("Inicio Vigencia")]
+        public DateTime InicioVigencia { get; set; }
 
-        [DisplayName("Valor de tempo de permanência")]
-        public double TempoPermanencia { get; set; }
+        [DisplayName("Fim de Vigencia")]
+        public DateTime FimVigencia { get; set; }
+
+        [DisplayName("Valor Hora")]
+        public double ValorHora { get; set; }
 
         [DisplayName("Valor da hora adicional")]
         public double ValorHoraAdicional { get; set; }
 
-        [DisplayName("Valor total")]
-        public double ValorTotal { get; set; }
+        [DisplayName("Placa do Veiculo")]
+        public string Placa { get; set; }
+
     }
 }

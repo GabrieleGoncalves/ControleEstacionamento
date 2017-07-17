@@ -50,19 +50,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\ValoresConfiguration.cs" />
-    <Compile Include="Configurations\VeiculoConfiguration.cs" />
+    <Compile Include="Configurations\MovimentacaoVeiculoConfiguration.cs" />
     <Compile Include="Context\EstacionamentoDbContext.cs" />
-    <Compile Include="Migrations\201707120530489_MigrationInicial.cs" />
-    <Compile Include="Migrations\201707120530489_MigrationInicial.Designer.cs">
-      <DependentUpon>201707120530489_MigrationInicial.cs</DependentUpon>
+    <Compile Include="Migrations\201707162113189_Inicial.cs" />
+    <Compile Include="Migrations\201707162113189_Inicial.Designer.cs">
+      <DependentUpon>201707162113189_Inicial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707160606266_AlterandoRelacionamento.cs" />
-    <Compile Include="Migrations\201707160606266_AlterandoRelacionamento.Designer.cs">
-      <DependentUpon>201707160606266_AlterandoRelacionamento.cs</DependentUpon>
+    <Compile Include="Migrations\201707162132184_AlterandoValores.cs" />
+    <Compile Include="Migrations\201707162132184_AlterandoValores.Designer.cs">
+      <DependentUpon>201707162132184_AlterandoValores.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201707160613316_AlterandoRelacionamento1.cs" />
-    <Compile Include="Migrations\201707160613316_AlterandoRelacionamento1.Designer.cs">
-      <DependentUpon>201707160613316_AlterandoRelacionamento1.cs</DependentUpon>
+    <Compile Include="Migrations\201707170200328_TrocandoValoresParaMovimentacaoVeiculo.cs" />
+    <Compile Include="Migrations\201707170200328_TrocandoValoresParaMovimentacaoVeiculo.Designer.cs">
+      <DependentUpon>201707170200328_TrocandoValoresParaMovimentacaoVeiculo.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,23 +73,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707120530489_MigrationInicial.resx">
-      <DependentUpon>201707120530489_MigrationInicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707160606266_AlterandoRelacionamento.resx">
-      <DependentUpon>201707160606266_AlterandoRelacionamento.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707160613316_AlterandoRelacionamento1.resx">
-      <DependentUpon>201707160613316_AlterandoRelacionamento1.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\ControleEstacionamento.Domain\ControleEstacionamento.Domain.csproj">
       <Project>{b4de93af-c6fd-4a7f-bead-15c14fa9f078}</Project>
       <Name>ControleEstacionamento.Domain</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707162113189_Inicial.resx">
+      <DependentUpon>201707162113189_Inicial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707162132184_AlterandoValores.resx">
+      <DependentUpon>201707162132184_AlterandoValores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707170200328_TrocandoValoresParaMovimentacaoVeiculo.resx">
+      <DependentUpon>201707170200328_TrocandoValoresParaMovimentacaoVeiculo.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -53,9 +53,9 @@
     <Compile Include="Base\ICrudRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Respositories\Interfaces\IValoresRepository.cs" />
-    <Compile Include="Respositories\Interfaces\IVeiculoRepository.cs" />
+    <Compile Include="Respositories\Interfaces\IMovimentacaoVeiculoRepository.cs" />
     <Compile Include="Respositories\ValoresRepository.cs" />
-    <Compile Include="Respositories\VeiculoRepository.cs" />
+    <Compile Include="Respositories\MovimentacaoVeiculoRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ControleEstacionamento.Domain\ControleEstacionamento.Domain.csproj">

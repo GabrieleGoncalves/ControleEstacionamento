@@ -50,7 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Valores.cs" />
-    <Compile Include="Entities\Veiculo.cs" />
+    <Compile Include="Entities\MovimentacaoVeiculo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

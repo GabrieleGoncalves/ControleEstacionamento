@@ -156,13 +156,13 @@
     <Compile Include="AutoMapper\DomainToViewModelProfile.cs" />
     <Compile Include="AutoMapper\ViewModelToDomainProfile.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\VeiculoController.cs" />
+    <Compile Include="Controllers\ValoresController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\Valores\ValoresViewModelList.cs" />
-    <Compile Include="ViewModels\Veiculo\VeiculoViewModelList.cs" />
+    <Compile Include="ViewModels\MovimentacaoVeiculo\MovimentacaoVeiculoViewModelList.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -202,12 +202,12 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Veiculo\Veiculo.cshtml" />
+    <Content Include="Views\Valores\Cadastrar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
-    <Folder Include="Views\Valores\" />
+    <Folder Include="Views\Veiculo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

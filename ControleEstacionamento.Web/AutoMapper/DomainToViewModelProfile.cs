@@ -9,7 +9,7 @@ namespace ControleEstacionamento.Web.AutoMapper
     {
         public DomainToViewModelProfile()
         {
-            CreateMap<Veiculo, VeiculoViewModelList>();
+            CreateMap<MovimentacaoVeiculo, MovimentacaoVeiculoViewModelList>();
 
             CreateMap<Valores, ValoresViewModelList>();
 

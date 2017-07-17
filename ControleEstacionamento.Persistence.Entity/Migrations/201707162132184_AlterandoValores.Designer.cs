@@ -7,13 +7,13 @@ namespace ControleEstacionamento.Persistence.Entity.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.2-31219")]
-    public sealed partial class AlterandoRelacionamento : IMigrationMetadata
+    public sealed partial class AlterandoValores : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(AlterandoRelacionamento));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AlterandoValores));
         
         string IMigrationMetadata.Id
         {
-            get { return "201707160606266_AlterandoRelacionamento"; }
+            get { return "201707162132184_AlterandoValores"; }
         }
         
         string IMigrationMetadata.Source

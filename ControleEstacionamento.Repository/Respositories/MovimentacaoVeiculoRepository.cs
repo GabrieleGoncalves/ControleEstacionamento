@@ -5,9 +5,9 @@ using ControleEstacionamento.Persistence.Entity.Context;
 
 namespace ControleEstacionamento.Repository.Respositories
 {
-    public class VeiculoRepository : CrudRepository<Veiculo, int>, IVeiculoRepository
+    public class MovimentacaoVeiculoRepository : CrudRepository<MovimentacaoVeiculo, int>, IMovimentacaoVeiculoRepository
     {
-        public VeiculoRepository (EstacionamentoDbContext context)
+        public MovimentacaoVeiculoRepository(EstacionamentoDbContext context)
             : base(context)
         { }
 

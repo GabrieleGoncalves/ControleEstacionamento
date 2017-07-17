@@ -5,6 +5,6 @@ namespace ControleEstacionamento.Repository.Respositories.Interfaces
 {
     public interface IValoresRepository : ICrudRepository<Valores, int>
     {
-
+        
     }
 }

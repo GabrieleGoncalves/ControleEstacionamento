@@ -19,7 +19,7 @@ namespace ControleEstacionamento.Persistence.Entity.Context
             modelBuilder.Properties<string>()
                  .Configure(p => p.HasMaxLength(500));
 
-            modelBuilder.Configurations.Add(new VeiculoConfiguration());
+            modelBuilder.Configurations.Add(new MovimentacaoVeiculoConfiguration());
             modelBuilder.Configurations.Add(new ValoresConfiguration());
 
         }

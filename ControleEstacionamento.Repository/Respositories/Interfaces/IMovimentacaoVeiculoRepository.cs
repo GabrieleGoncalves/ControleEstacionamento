@@ -3,7 +3,7 @@ using ControleEstacionamento.Domain.Entities;
 
 namespace ControleEstacionamento.Repository.Respositories.Interfaces
 {
-    public interface IVeiculoRepository : ICrudRepository<Veiculo, int>
+    public interface IMovimentacaoVeiculoRepository : ICrudRepository<MovimentacaoVeiculo, int>
     {
 
     }

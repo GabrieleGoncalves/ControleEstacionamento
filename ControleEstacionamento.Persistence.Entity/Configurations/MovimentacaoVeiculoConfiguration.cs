@@ -40,6 +40,6 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
                 .WithMany(p => p.ListaMovimentacao)
                 .HasForeignKey(p => p.ValorId);
         }
-
+    
     }
 }

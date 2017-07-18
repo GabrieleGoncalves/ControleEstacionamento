@@ -10,8 +10,11 @@ namespace ControleEstacionamento.Web.AutoMapper
         public ViewModelToDomainProfile()
         {
             CreateMap<MovimentacaoVeiculoViewModelList, MovimentacaoVeiculo>();
+            CreateMap<ValoresViewModelList, Valores>();
 
             CreateMap<ValoresViewModelList, Valores>();
+
+            
         }
     }
 }

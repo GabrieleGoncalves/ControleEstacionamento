@@ -13,6 +13,7 @@ namespace ControleEstacionamento.Web.AutoMapper
 
             CreateMap<Valores, ValoresViewModelList>();
 
+            CreateMap<Valores, ValoresViewModelList>();
         }
     }
 }

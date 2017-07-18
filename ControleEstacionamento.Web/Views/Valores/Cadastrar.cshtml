@@ -1,7 +1,38 @@
-﻿
+﻿@model ControleEstacionamento.Web.ViewModels.Valores.ValoresViewModelList
 @{
-    ViewBag.Title = "Cadastrar";
+    ViewBag.Title = "Cadastrar Valores";
 }
 
 <h2>Cadastrar</h2>
 
+@using (Html.BeginForm("Cadastrar", "Valores", FormMethod.Post))
+{
+    <div class="row col-md-offset-1">
+
+        <div class="flex-grid">
+            <div class="body-content" >
+                @Html.LabelFor(model => model.ValorHora)
+                @Html.TextBoxFor(model => model.ValorHora)
+            </div>
+            <div class="body-content" >
+                @Html.LabelFor(model => model.InicioVigencia)
+                @Html.TextBoxFor(model => model.InicioVigencia)
+            </div>
+            <div class="body-content" >
+                @Html.LabelFor(model => model.FimVigencia)
+                @Html.TextBoxFor(model => model.FimVigencia)
+                
+            </div>
+            <div class="body-content" >
+                @Html.LabelFor(model => model.ValorHoraAdicional)
+                @Html.TextBoxFor(model => model.ValorHoraAdicional)
+            </div>
+            <div class="row margin10">
+                <div class="col-md-offset-1">
+                    <button type="submit" class="button prymary">Cadastrar</button>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+}

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace ControleEstacionamento.Domain.Entities
 {
+
     public class MovimentacaoVeiculo
     {
         public int MovimentacaoVeiculoId { get; set; }

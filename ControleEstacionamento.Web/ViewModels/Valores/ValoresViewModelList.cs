@@ -18,9 +18,5 @@ namespace ControleEstacionamento.Web.ViewModels.Valores
 
         [DisplayName("Valor da hora adicional")]
         public double ValorHoraAdicional { get; set; }
-
-        [DisplayName("Placa do Veiculo")]
-        public string Placa { get; set; }
-
     }
 }

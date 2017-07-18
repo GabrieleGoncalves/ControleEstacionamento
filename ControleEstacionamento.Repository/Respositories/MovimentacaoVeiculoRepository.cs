@@ -8,8 +8,7 @@ namespace ControleEstacionamento.Repository.Respositories
     public class MovimentacaoVeiculoRepository : CrudRepository<MovimentacaoVeiculo, int>, IMovimentacaoVeiculoRepository
     {
         public MovimentacaoVeiculoRepository(EstacionamentoDbContext context)
-            : base(context)
-        { }
+            : base(context)  { }
 
     }
 }

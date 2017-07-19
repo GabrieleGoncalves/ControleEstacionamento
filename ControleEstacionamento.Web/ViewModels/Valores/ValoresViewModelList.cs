@@ -7,16 +7,16 @@ namespace ControleEstacionamento.Web.ViewModels.Valores
     {
         public int ValorId { get; set; }
 
-        [DisplayName("Inicio Vigencia")]
+        [DisplayName("Inicio de Vigencia")]
         public DateTime InicioVigencia { get; set; }
 
         [DisplayName("Fim de Vigencia")]
         public DateTime FimVigencia { get; set; }
 
-        [DisplayName("Valor Hora")]
+        [DisplayName("Valor da Hora")]
         public double ValorHora { get; set; }
 
-        [DisplayName("Valor da hora adicional")]
-        public double ValorHoraAdicional { get; set; }
+        [DisplayName("Valor da Hora Adicional")]
+        public double ValorAdicional { get; set; }
     }
 }

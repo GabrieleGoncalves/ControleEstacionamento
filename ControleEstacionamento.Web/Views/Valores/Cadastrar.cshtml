@@ -3,36 +3,40 @@
     ViewBag.Title = "Cadastrar Valores";
 }
 
-<h2>Cadastrar</h2>
+<h2>Cadastrar Valores</h2>
 
 @using (Html.BeginForm("Cadastrar", "Valores", FormMethod.Post))
 {
     <div class="row col-md-offset-1">
-
-        <div class="flex-grid">
-            <div class="body-content" >
+        @Html.AntiForgeryToken()
+        <div class="panel-title col-md-6">
+            <div class="body-content">
                 @Html.LabelFor(model => model.ValorHora)
-                @Html.TextBoxFor(model => model.ValorHora)
+                @Html.TextBoxFor(model => model.ValorHora, new { @class = "form-control", placeholder = "Valor da Hora" })
+                @Html.ValidationMessageFor(model => model.ValorHora)
             </div>
-            <div class="body-content" >
+            <div class="body-content">
                 @Html.LabelFor(model => model.InicioVigencia)
-                @Html.TextBoxFor(model => model.InicioVigencia)
+                @Html.TextBoxFor(model => model.InicioVigencia, new { @class = "form-control", placeholder = "Inicio Vigencia (dd-mm-aaaa)" })
+                @Html.ValidationMessageFor(model => model.InicioVigencia)
             </div>
-            <div class="body-content" >
+            <div class="body-content">
                 @Html.LabelFor(model => model.FimVigencia)
-                @Html.TextBoxFor(model => model.FimVigencia)
-                
+                @Html.TextBoxFor(model => model.FimVigencia, new { @class = "form-control", placeholder = "Fim Vigencia (dd-mm-aaaa)" })
+                @Html.ValidationMessageFor(model => model.FimVigencia)
             </div>
-            <div class="body-content" >
-                @Html.LabelFor(model => model.ValorHoraAdicional)
-                @Html.TextBoxFor(model => model.ValorHoraAdicional)
+            <div class="body-content">
+                @Html.LabelFor(model => model.ValorAdicional)
+                @Html.TextBoxFor(model => model.ValorAdicional, new { @class = "form-control", placeholder = "Valor da Hora Adicional" })
+                @Html.ValidationMessageFor(model => model.ValorAdicional)
             </div>
-            <div class="row margin10">
-                <div class="col-md-offset-1">
+            <br />
+            <div class="row">
+                <div class="col-md-offset-5">
                     <button type="submit" class="button prymary">Cadastrar</button>
                 </div>
             </div>
-            
+
         </div>
     </div>
 }

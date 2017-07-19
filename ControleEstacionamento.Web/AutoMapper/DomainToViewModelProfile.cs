@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using ControleEstacionamento.Domain.Entities;
-using ControleEstacionamento.ViewModels.Veiculo;
+using ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo;
 using ControleEstacionamento.Web.ViewModels.Valores;
 
 namespace ControleEstacionamento.Web.AutoMapper
@@ -14,6 +14,8 @@ namespace ControleEstacionamento.Web.AutoMapper
             CreateMap<Valores, ValoresViewModelList>();
 
             CreateMap<Valores, ValoresViewModelList>();
+
+            CreateMap<MovimentacaoVeiculo, MovimentacaoVeiculoViewModelList>();
         }
     }
 }

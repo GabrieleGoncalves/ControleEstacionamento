@@ -1,7 +1,8 @@
 ﻿using System;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 
-namespace ControleEstacionamento.ViewModels.Veiculo
+namespace ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo
 {
     public class MovimentacaoVeiculoViewModelList
     {
@@ -14,6 +15,10 @@ namespace ControleEstacionamento.ViewModels.Veiculo
 
         public DateTime Entrada { get; set; }
 
-        public DateTime Saida { get; set; }
+        public DateTime? Saida { get; set; }
+
+        [DisplayName("Valor")]
+        [Required(ErrorMessage ="Escolha um valor")]
+        public int ValorId { get; set; }
     }
 }

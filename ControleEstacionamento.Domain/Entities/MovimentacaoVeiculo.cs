@@ -13,7 +13,7 @@ namespace ControleEstacionamento.Domain.Entities
         public string Placa { get; set; }
         public string NomeCliente { get; set; }
         public DateTime Entrada { get; set; }
-        public DateTime Saida { get; set; }
+        public DateTime? Saida { get; set; }
 
         public virtual Valores Valor { get; set; }
         public int ValorId { get; set; }

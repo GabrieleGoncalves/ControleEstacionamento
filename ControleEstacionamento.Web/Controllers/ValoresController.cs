@@ -15,13 +15,8 @@ namespace ControleEstacionamento.Web.Controllers
         private IValoresRepository _valoresRepository = new ValoresRepository(new EstacionamentoDbContext());
         // GET: Valores
 
-        public ActionResult Index()
-        {
-            return View();
-        }
-
         [HttpGet]
-        public ActionResult Listar()
+        public ActionResult Index()
         {
 
             List<Valores> valores = _valoresRepository.Select();
@@ -36,11 +31,15 @@ namespace ControleEstacionamento.Web.Controllers
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Cadastrar(ValoresViewModelList viewModel)
         {
+            if (!ModelState.IsValid)
+                return View(viewModel);
+
             Valores valores = Mapper.Map<ValoresViewModelList, Valores>(viewModel);
             _valoresRepository.Insert(valores);
-            return View();
+            return View("Index");
         }
     }
 }

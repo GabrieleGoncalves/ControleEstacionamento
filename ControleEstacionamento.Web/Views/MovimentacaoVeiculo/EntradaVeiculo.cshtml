@@ -1,0 +1,41 @@
+﻿@model ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo.MovimentacaoVeiculoViewModelList
+@{
+    ViewBag.Title = "EntradaVeiculo";
+}
+
+<h2>Entrada de Veículo</h2>
+
+@using (Html.BeginForm("EntradaVeiculo", "MovimentacaoVeiculo", FormMethod.Post))
+{
+    @Html.HiddenFor(v => v.ValorId)
+
+<div class="row col-md-offset-1">
+    @Html.AntiForgeryToken()
+    <div class="panel-title col-md-6">
+        <div class="body-content">
+            @Html.LabelFor(model => model.Placa)
+            @Html.TextBoxFor(model => model.Placa, new { @class = "form-control", placeholder = "Placa do Veiculo" })
+            @Html.ValidationMessageFor(model => model.Placa)
+        </div>
+        <div class="body-content">
+            @Html.LabelFor(model => model.NomeCliente)
+            @Html.TextBoxFor(model => model.NomeCliente, new { @class = "form-control", placeholder = "Nome do Cliente" })
+            @Html.ValidationMessageFor(model => model.NomeCliente)
+        </div>
+        <div class="body-content">
+            @Html.LabelFor(model => model.Entrada)
+            @Html.TextBoxFor(model => model.Entrada, new { @class = "form-control", placeholder = "Hora da Entrada" })
+            @Html.ValidationMessageFor(model => model.Entrada)
+        </div>
+        <div class="body-content">
+            @Html.LabelFor(model => model.Saida)
+            @Html.TextBoxFor(model => model.Saida, new { @class = "form-control", placeholder = "Hora da Saída" })
+            @Html.ValidationMessageFor(model => model.Saida)
+        </div>
+        <div class="body-content" id="listaValores">
+            @Html.ActionLink("Atualizar", "Index", "MovimentacaoVeiculo", new { id = item.Id }, null)
+
+        </div>
+        }
+    </div>
+</div>

@@ -21,6 +21,7 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
                 .HasColumnName("mov_entrada");
 
             Property(p => p.Saida)
+                .IsOptional()
                 .HasColumnName("mov_saida");
         }
 

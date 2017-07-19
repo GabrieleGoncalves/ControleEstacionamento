@@ -23,6 +23,16 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
             Property(p => p.Saida)
                 .IsOptional()
                 .HasColumnName("mov_saida");
+
+            Property(p => p.TempoPermanecica)
+                .HasColumnName("mov_tempo_permanencia");
+
+            Property(p => p.HoraAdicional)
+                .HasColumnName("mov_hora_adicional");
+
+            Property(p => p.ValorTotal)
+                .HasColumnName("mov_valor_total");
+
         }
 
         public override void ConfiguraChavePrimaria()

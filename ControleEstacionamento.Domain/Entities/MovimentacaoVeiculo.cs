@@ -14,6 +14,9 @@ namespace ControleEstacionamento.Domain.Entities
         public string NomeCliente { get; set; }
         public DateTime Entrada { get; set; }
         public DateTime? Saida { get; set; }
+        public DateTime TempoPermanecica { get; set; }
+        public DateTime HoraAdicional { get; set; }
+        public double ValorTotal { get; set; }
 
         public virtual Valores Valor { get; set; }
         public int ValorId { get; set; }

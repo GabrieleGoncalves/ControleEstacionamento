@@ -76,8 +76,8 @@ namespace ControleEstacionamento.Web.Controllers
 
 
             MovimentacaoVeiculo veiculo = Mapper.Map<MovimentacaoVeiculoViewModelList, MovimentacaoVeiculo>(viewModel);
-            Valores valores = _valoresRepository.Select(p => p.InicioVigencia <= veiculo.Entrada).FirstOrDefault();
-            veiculo.ValorId = valores.ValorId;
+            //Valores valores = _valoresRepository.Select(p => p.InicioVigencia <= veiculo.Entrada).FirstOrDefault();
+            //veiculo.ValorId = valores.ValorId;
             _movimentacaoVeiculoRepository.Update(veiculo);
             return View("Index");
 

@@ -16,6 +16,9 @@ namespace ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo
         public DateTime Entrada { get; set; }
 
         public DateTime? Saida { get; set; }
+        public DateTime TempoPermanencia { get; set; }
+        public DateTime HoraAdicional { get; set; }
+        public double ValorTotal { get; set; }
 
         [DisplayName("Valor")]
         [Required(ErrorMessage ="Escolha um valor")]

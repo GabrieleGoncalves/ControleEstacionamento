@@ -6,8 +6,8 @@ using System.Web.Mvc;
 using ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo;
 using ControleEstacionamento.Domain.Entities;
 using AutoMapper;
-using ControleEstacionamento.Web.ViewModels.Valores;
 using System.Linq;
+using System;
 
 namespace ControleEstacionamento.Web.Controllers
 {
@@ -22,17 +22,11 @@ namespace ControleEstacionamento.Web.Controllers
         // GET: MovimentacaoVeiculo
         public ActionResult Index()
         {
-            return View();
+            List<MovimentacaoVeiculoViewModelList> viewModel = Mapper.Map<List< MovimentacaoVeiculoViewModelList>>
+                ( _movimentacaoVeiculoRepository.Select());
+            return View(viewModel);
         }
-
-        [HttpGet]
-        public ActionResult IndexMovimentacaoVeiculo(int? id)
-        {
-            List<MovimentacaoVeiculo> veiculo = _movimentacaoVeiculoRepository.Select();
-            List<MovimentacaoVeiculoViewModelList> viewModel = Mapper.Map<List<MovimentacaoVeiculo>, List<MovimentacaoVeiculoViewModelList>>(veiculo); 
-
-            return View();
-        }
+        
         //marcar a data e hora de entrada do veículo
         [HttpGet]
         public ActionResult EntradaVeiculo()
@@ -43,49 +37,63 @@ namespace ControleEstacionamento.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult EntradaVeiculo(MovimentacaoVeiculoViewModelList viewModel)
+        public ActionResult EntradaVeiculo(MovimentacaoVeiculoViewModelEntrada viewModel)
         {
 
             if (!ModelState.IsValid)
                 return View(viewModel);
+
+            MovimentacaoVeiculo veiculo = Mapper.Map<MovimentacaoVeiculo>(viewModel);
+
+            veiculo.Entrada = DateTime.Now;
             
-            
-            MovimentacaoVeiculo veiculo = Mapper.Map<MovimentacaoVeiculoViewModelList, MovimentacaoVeiculo>(viewModel);
             Valores valores = _valoresRepository.Select(p => p.InicioVigencia <= veiculo.Entrada).FirstOrDefault();
             veiculo.ValorId = valores.ValorId;
-            _movimentacaoVeiculoRepository.Insert(veiculo); 
-            return View("Index");
-            
+            _movimentacaoVeiculoRepository.Insert(veiculo);
+            return RedirectToAction("Index");
+
         }
 
         [HttpGet]
         public ActionResult Saida(int? id)
         {
-            MovimentacaoVeiculo veiculo = _movimentacaoVeiculoRepository.SelectById(id.Value);
-            _movimentacaoVeiculoRepository.Update(veiculo);
-            return View();
+            MovimentacaoVeiculoViewModelList veiculoViewModel = Mapper.Map<MovimentacaoVeiculoViewModelList>(_movimentacaoVeiculoRepository.SelectById(id.Value));
+            return View(veiculoViewModel);
 
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Saida(MovimentacaoVeiculoViewModelList viewModel)
         {
 
-            if (!ModelState.IsValid)
+            if (!ModelState.IsValid || viewModel.Entrada > viewModel.Saida)
                 return View(viewModel);
 
+         
+            MovimentacaoVeiculo veiculo = _movimentacaoVeiculoRepository.SelectById(viewModel.MovimentacaoVeiculoId);
+            veiculo.Saida = viewModel.Saida.Value;
+            TimeSpan diferenca = veiculo.Saida.Value - veiculo.Entrada;
+            veiculo.MinutosPermanencia = Convert.ToInt32(diferenca.TotalMinutes) % 60;
+            veiculo.HorasPermanencia = Convert.ToInt32(diferenca.TotalHours);
 
-            MovimentacaoVeiculo veiculo = Mapper.Map<MovimentacaoVeiculoViewModelList, MovimentacaoVeiculo>(viewModel);
-            //Valores valores = _valoresRepository.Select(p => p.InicioVigencia <= veiculo.Entrada).FirstOrDefault();
-            //veiculo.ValorId = valores.ValorId;
+            if(veiculo.MinutosPermanencia > 10)
+            {
+                if (veiculo.MinutosPermanencia <= 30)
+                {
+                    veiculo.ValorTotal = veiculo.Valor.ValorHora + (veiculo.Valor.ValorAdicional * (veiculo.HorasPermanencia.Value - 1)) + (veiculo.Valor.ValorAdicional / 2);
+                }else
+                    veiculo.ValorTotal = veiculo.Valor.ValorHora + (veiculo.Valor.ValorAdicional * (veiculo.HorasPermanencia.Value - 1)) + (veiculo.Valor.ValorAdicional);
+                
+            }else
+                veiculo.ValorTotal = veiculo.Valor.ValorHora + (veiculo.Valor.ValorAdicional * (veiculo.HorasPermanencia.Value - 1));
+
+
             _movimentacaoVeiculoRepository.Update(veiculo);
-            return View("Index");
-
-
-
-            
-        }
-
+            return RedirectToAction("Index");
 
         }
+
+
+    }
 }

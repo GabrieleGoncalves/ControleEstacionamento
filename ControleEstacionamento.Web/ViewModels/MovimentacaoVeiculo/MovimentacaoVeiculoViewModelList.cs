@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ControleEstacionamento.Web.ViewModels.Valores;
+using System;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 
@@ -11,17 +12,22 @@ namespace ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo
         [DisplayName("Placa do Carro")]
         public string Placa { get; set; }
 
+        [DisplayName("Nome cliente")]
         public string NomeCliente { get; set; }
 
+        [DisplayName("Entrada")]
         public DateTime Entrada { get; set; }
 
+        [DisplayName("Saída")]
         public DateTime? Saida { get; set; }
-        public DateTime TempoPermanencia { get; set; }
-        public DateTime HoraAdicional { get; set; }
-        public double ValorTotal { get; set; }
+
+        [DisplayName("Valor total")]
+        public double? ValorTotal { get; set; }
 
         [DisplayName("Valor")]
-        [Required(ErrorMessage ="Escolha um valor")]
         public int ValorId { get; set; }
+
+        public ValoresViewModelList Valor { get; set; }
+
     }
 }

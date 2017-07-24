@@ -162,6 +162,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\MovimentacaoVeiculo\MovimentacaoVeiculoViewModelEntrada.cs" />
     <Compile Include="ViewModels\Valores\ValoresViewModelList.cs" />
     <Compile Include="ViewModels\MovimentacaoVeiculo\MovimentacaoVeiculoViewModelList.cs" />
   </ItemGroup>
@@ -207,6 +208,7 @@
     <Content Include="Views\Valores\Index.cshtml" />
     <Content Include="Views\MovimentacaoVeiculo\Index.cshtml" />
     <Content Include="Views\MovimentacaoVeiculo\EntradaVeiculo.cshtml" />
+    <Content Include="Views\MovimentacaoVeiculo\Saida.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

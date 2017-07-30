@@ -17,12 +17,12 @@
             </div>
             <div class="body-content">
                 @Html.LabelFor(model => model.InicioVigencia)
-                @Html.TextBoxFor(model => model.InicioVigencia, new { @class = "form-control", placeholder = "Inicio Vigencia (dd-mm-aaaa)" })
+                @Html.TextBoxFor(model => model.InicioVigencia, new { @class = "form-control", @type = "date", placeholder = "Inicio Vigencia (dd-mm-aaaa)" })
                 @Html.ValidationMessageFor(model => model.InicioVigencia)
             </div>
             <div class="body-content">
                 @Html.LabelFor(model => model.FimVigencia)
-                @Html.TextBoxFor(model => model.FimVigencia, new { @class = "form-control", placeholder = "Fim Vigencia (dd-mm-aaaa)" })
+                @Html.TextBoxFor(model => model.FimVigencia, new { @class = "form-control", @type = "date", placeholder = "Fim Vigencia (dd-mm-aaaa)" })
                 @Html.ValidationMessageFor(model => model.FimVigencia)
             </div>
             <div class="body-content">

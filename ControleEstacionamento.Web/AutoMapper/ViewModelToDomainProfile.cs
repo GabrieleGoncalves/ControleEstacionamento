@@ -14,6 +14,8 @@ namespace ControleEstacionamento.Web.AutoMapper
 
             CreateMap<ValoresViewModelList, Valores>();
             CreateMap<MovimentacaoVeiculoViewModelList, MovimentacaoVeiculo>();
+
+            CreateMap<MovimentacaoVeiculoViewModelEntrada, MovimentacaoVeiculo>();
             
         }
     }

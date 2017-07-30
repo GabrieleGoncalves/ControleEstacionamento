@@ -39,7 +39,7 @@ namespace ControleEstacionamento.Web.Controllers
 
             Valores valores = Mapper.Map<ValoresViewModelList, Valores>(viewModel);
             _valoresRepository.Insert(valores);
-            return View("Index");
+            return RedirectToAction("Index");
         }
     }
 }

@@ -1,7 +1,90 @@
-﻿
+﻿@model IEnumerable<ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo.MovimentacaoVeiculoViewModelList>
 @{
     ViewBag.Title = "Index";
 }
 
-<h2>IndexMovimentacaoVeiculo</h2>
+<h2>Index veículos</h2>
+
+
+
+@Html.ActionLink("Cadastrar nova entrada", "EntradaVeiculo", "MovimentacaoVeiculo")
+
+
+@if (Model.Count() > 0)
+{
+    <table class="table table-striped table-condensed align-center">
+        <thead>
+            <tr>
+                <th style="text-align: left !important; ">
+                    @Html.DisplayNameFor(model => model.Placa)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.NomeCliente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Entrada)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Saida)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor.ValorHora)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Valor.ValorAdicional)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ValorTotal)
+                </th>
+                <th>
+                    Saída
+                </th>
+
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var veiculo in Model)
+            {
+                <tr>
+                    <td class="align-center">
+                        @Html.DisplayFor(model => veiculo.Placa)
+                    </td>
+                    <td class="align-center">
+                        @Html.DisplayFor(model => veiculo.NomeCliente)
+                    </td>
+                    <td class="align-center">
+                        @veiculo.Entrada
+                    </td>
+                    <td class="align-center">
+                        @if (veiculo.Saida != null)
+                        {
+                            @Html.DisplayFor(model => veiculo.Saida)
+                        }
+                    </td>
+                    <td class="align-center">
+                        @Html.DisplayFor(model => veiculo.Valor.ValorHora)
+                    </td>
+                    <td class="align-center">
+                        @Html.DisplayFor(model => veiculo.Valor.ValorAdicional)
+                    </td>
+                    <td class="align-center">
+                        @if (veiculo.ValorTotal != null)
+                        {
+                            @Html.DisplayFor(model => veiculo.ValorTotal)
+                        }
+                    </td>
+                    <td class="align-center">
+                        @Html.ActionLink("Marcar", "Saida", "MovimentacaoVeiculo", new { id = veiculo.MovimentacaoVeiculoId }, null)
+                    </td>
+
+
+
+                </tr>
+            }
+
+        </tbody>
+
+    </table>
+}
 

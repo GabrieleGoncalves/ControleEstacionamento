@@ -24,13 +24,16 @@ namespace ControleEstacionamento.Persistence.Entity.Configurations
                 .IsOptional()
                 .HasColumnName("mov_saida");
 
-            Property(p => p.TempoPermanecica)
-                .HasColumnName("mov_tempo_permanencia");
+            Property(p => p.HorasPermanencia)
+                .IsOptional()
+                .HasColumnName("mov_horas_permanencia");
 
-            Property(p => p.HoraAdicional)
-                .HasColumnName("mov_hora_adicional");
+            Property(p => p.MinutosPermanencia)
+                .IsOptional()
+                .HasColumnName("mov_minuto_permanenia");
 
             Property(p => p.ValorTotal)
+                .IsOptional()
                 .HasColumnName("mov_valor_total");
 
         }

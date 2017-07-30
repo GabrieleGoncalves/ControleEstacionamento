@@ -1,0 +1,51 @@
+﻿@model ControleEstacionamento.Web.ViewModels.MovimentacaoVeiculo.MovimentacaoVeiculoViewModelList
+@{
+    ViewBag.Title = "Saida";
+}
+
+<h2>Saida de Veículo</h2>
+<hr />
+
+@using (Html.BeginForm("Saida", "MovimentacaoVeiculo", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    @Html.HiddenFor(p => p.MovimentacaoVeiculoId)
+
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(p => p.Placa)
+                @Html.DisplayFor(p => p.Placa)
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(p => p.Entrada)
+                @Html.DisplayFor(p => p.Entrada)
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                @Html.LabelFor(model => model.Saida)
+                @Html.TextBoxFor(p => p.Saida, new { @class = "form-control"})
+                @Html.ValidationMessageFor(model => model.Saida)
+            </div>
+        </div>
+
+        <div class="row" style="margin-top:15px">
+            <div class="col-md-4">
+                <button type="submit" class="btn-default btn">Marcar saída</button>
+            </div>
+        </div>
+
+
+
+
+    </div>
+
+
+
+}

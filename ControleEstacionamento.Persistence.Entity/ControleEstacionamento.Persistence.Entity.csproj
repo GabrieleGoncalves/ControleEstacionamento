@@ -52,29 +52,9 @@
     <Compile Include="Configurations\ValoresConfiguration.cs" />
     <Compile Include="Configurations\MovimentacaoVeiculoConfiguration.cs" />
     <Compile Include="Context\EstacionamentoDbContext.cs" />
-    <Compile Include="Migrations\201707162113189_Inicial.cs" />
-    <Compile Include="Migrations\201707162113189_Inicial.Designer.cs">
-      <DependentUpon>201707162113189_Inicial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707162132184_AlterandoValores.cs" />
-    <Compile Include="Migrations\201707162132184_AlterandoValores.Designer.cs">
-      <DependentUpon>201707162132184_AlterandoValores.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707170200328_TrocandoValoresParaMovimentacaoVeiculo.cs" />
-    <Compile Include="Migrations\201707170200328_TrocandoValoresParaMovimentacaoVeiculo.Designer.cs">
-      <DependentUpon>201707170200328_TrocandoValoresParaMovimentacaoVeiculo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707181851278_AlternadoCampoMovimentacaoVeiculo.cs" />
-    <Compile Include="Migrations\201707181851278_AlternadoCampoMovimentacaoVeiculo.Designer.cs">
-      <DependentUpon>201707181851278_AlternadoCampoMovimentacaoVeiculo.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707191331306_InserindoCampos.cs" />
-    <Compile Include="Migrations\201707191331306_InserindoCampos.Designer.cs">
-      <DependentUpon>201707191331306_InserindoCampos.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201707191345020_InserindoCamposMovimentacaoVeiculo.cs" />
-    <Compile Include="Migrations\201707191345020_InserindoCamposMovimentacaoVeiculo.Designer.cs">
-      <DependentUpon>201707191345020_InserindoCamposMovimentacaoVeiculo.cs</DependentUpon>
+    <Compile Include="Migrations\201707212319482_Inicial.cs" />
+    <Compile Include="Migrations\201707212319482_Inicial.Designer.cs">
+      <DependentUpon>201707212319482_Inicial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\201707302221070_AlterandoFinal.cs" />
     <Compile Include="Migrations\201707302221070_AlterandoFinal.Designer.cs">
@@ -95,23 +75,8 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707162113189_Inicial.resx">
-      <DependentUpon>201707162113189_Inicial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707162132184_AlterandoValores.resx">
-      <DependentUpon>201707162132184_AlterandoValores.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707170200328_TrocandoValoresParaMovimentacaoVeiculo.resx">
-      <DependentUpon>201707170200328_TrocandoValoresParaMovimentacaoVeiculo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707181851278_AlternadoCampoMovimentacaoVeiculo.resx">
-      <DependentUpon>201707181851278_AlternadoCampoMovimentacaoVeiculo.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707191331306_InserindoCampos.resx">
-      <DependentUpon>201707191331306_InserindoCampos.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201707191345020_InserindoCamposMovimentacaoVeiculo.resx">
-      <DependentUpon>201707191345020_InserindoCamposMovimentacaoVeiculo.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201707212319482_Inicial.resx">
+      <DependentUpon>201707212319482_Inicial.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201707302221070_AlterandoFinal.resx">
       <DependentUpon>201707302221070_AlterandoFinal.cs</DependentUpon>
